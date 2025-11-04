@@ -200,9 +200,9 @@ The source code for the site is licensed under the MIT license, which you can fi
 
 ## References
 
-Lundberg & Lee (2017) — A Unified Approach to Interpreting Model Predictions (SHAP), NeurIPS
-scikit-learn documentation (v1.5) — Precision, Recall, and F1-score metrics for classification performance assessment
-Kuhn & Johnson (2019) — Applied Predictive Modeling, Springer
-Recruitfirst (2025) — Employee Turnover Rate Costs Too High? Here’s How to Keep Them Under Control
+- Lundberg & Lee (2017) — A Unified Approach to Interpreting Model Predictions (SHAP), NeurIPS
+- scikit-learn documentation (v1.5) — Precision, Recall, and F1-score metrics for classification performance assessment
+- Kuhn & Johnson (2019) — Applied Predictive Modeling, Springer
+- Recruitfirst (2025) — Employee Turnover Rate Costs Too High? Here’s How to Keep Them Under Control
 
 
