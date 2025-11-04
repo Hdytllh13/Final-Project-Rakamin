@@ -12,19 +12,6 @@ Final Project ini disusun sebagai salah satu syarat untuk menyelesaikan Data Sci
 * Fani Dwi as Data Scientist
 * Taufiq Hidayatullah as Data Engineer
 
-## Table of Contents
-* [Preparation](#Stage-0-Preparation)
-    * [Problem Statement](#01-Problem-Statement)
-    * [Goal](#02-Goal)
-    * [Objective](#03-Objective)
-* [Exploratory Data Analysis](#Stage-1-Exploratory-Data-Analysis)
-    * [Data Exploration](#11-Data-Exploration)
-    * [Data Understanding](#12-Data-Understanding)
-    * [Exploratory Data Analysis](#13-Exploratory-Data-Analysis)    
-* [Data Preprocessing](#Stage-2-Data-Preprocessing)
-    * [Data Cleansing](#21-Data-Cleansing)
-    * [Feature Engineering](#22-Feature-Engineering)
-
 ## Stage 0. Preparation
 
 ### 0.1. Problem Statement
@@ -49,6 +36,7 @@ Dataset [employee_churn_prediction_updated] merupakan dataset dengan total 10.00
 ### 1.2. Data Understanding
 #### 1.2.0. Features Definition
 ##### 1.2.0.1. Numerical Features
+
 | Feature Name              | Feature Description                                                    |
 |:--------------------------|:-----------------------------------------------------------------------|
 | `employee_id`             | Unique ID for each employee                                            |
@@ -165,8 +153,6 @@ Beban kerja dan faktor yang menyebabkan stress memiliki korelasi paling tinggi. 
 Faktor yang berkaitan dengan perkembangan karir, tercapainya target dan kepuasan kerja menjadi faktor yang membuat karyawan bertahan. 
 
 ## Stage 2. Data Preprocessing
-Tahap Pengerjaan
-
 ### 2.1. Data Cleansing
 ### 2.1.1. Handle Missing Values
 - Pada saat dilakukan handle missing values didapatkan jumlah nilai pada dataset adalah 0, sehingga dapat disimpulkan dataset ini bersih karena tidak memiliki nilai kosong
@@ -185,9 +171,38 @@ Kami menggunakan metode Random Over-Sampling untuk _handle_ fitur target yang ti
 - Dari proses pengerjaan yang kami lakukan, kami menemukan bahwa jumlah karyawan yang keluar sebanyak 467 dibanding yang bertahan 273.
 - Setelah melakukan proses handling terhadap imbalance class, data karyawn yang keluar dan bertahan masing-masing berjumlah 467.
 
+## Stage 3. Modelling
+### 3.1. Model Metrics
+
+Model evaluation yang digunakan adalah recall dengan mempertimbangkan precision. Hal ini dikarenakan nilai false negative tidak boleh lebih besar pada kasus churn prediction. Jika nilai false negative besar, maka karyawan yang akan keluar perusahaan tidak dihitung dalam prediksi dan tidak mendapatkan penangan dari perusahaan. Nilai train dan test pada precision dan recall yang tergolong baik yaitu diatas 0.5.
+
+### 3.2. Split Data Train dan Test
+Perbandingan train set dan test set yang digunakan untuk training model dan evaluasi model adalah 80:20
+Total rows & column of train set: (740, 24)
+Total rows & column of test set: (186, 24)
+
+### 3.3. Algorithm
+Algoritma yang dipilih untuk melatih data Employee Churn adalah Logistic Regression sebagai model dasar serta Decision Tree, K-Nearest Neighbor, Random Forest, dan XGboost.
+
+### 3.4. Evaluation
+
+| No. | Machine Learning Model | Before Tuning (Training F2 score) | Before Tuning (Test F2 score) | After Tuning (Training F2 score) | After Tuning (Test F2 score)  |
+|:---:|:-----------------------|:---------------------------------:|:-----------------------------:|:--------------------------------:|:-----------------------------:|
+| 1.  | **Logistic Regression**| 0.7508                            | 0.7005                        | **0.7650**                       | **0.7417**                    |
+| 2.  | Random Forest          | 0.9770                            | 0.7437                        | 0.9902                           | 0.7597                        |
+| 3.  | Decision Tree          | 1.00                              | 0.7881                        | 0.7527                           | 0.8163                        |
+| 4.  | Xgboost                | 0.8870                            | 0.7135                        | 0.9574                           | 0.7583                        |
+| 5.  | KNN                    | 0.7810                            | 0.6497                        | 1.00                             | 0.6461                        |
+
 ## License
 
 The source code for the site is licensed under the MIT license, which you can find [here](https://github.com/sabirinID/Final-Project-Quattro/blob/main/LICENCE).
 
 ## References
+
+Lundberg & Lee (2017) — A Unified Approach to Interpreting Model Predictions (SHAP), NeurIPS
+scikit-learn documentation (v1.5) — Precision, Recall, and F1-score metrics for classification performance assessment
+Kuhn & Johnson (2019) — Applied Predictive Modeling, Springer
+Recruitfirst (2025) — Employee Turnover Rate Costs Too High? Here’s How to Keep Them Under Control
+
 
