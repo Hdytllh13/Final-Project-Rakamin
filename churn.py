@@ -518,7 +518,7 @@ with tab2:
                                     "target_achievement": "Target\nAchievement"}
                         faktor_mean = faktor_mean_orig.rename(index=rename_map)
                         faktor_mean.plot(kind="bar", ax=ax_faktor, width=0.65, color=["#3498DB", "#F39C12"])
-                        bars = ax_faktor.bar(faktor_mean.index, faktor_mean.value, color=colors, width=0.6)
+                        bars = ax_faktor.bar(faktor_mean.index, faktor_mean.values, color=colors, width=0.6)
                         
                         ax_faktor.set_title("Perbandingan Faktor Rata-rata: Churn vs No Churn", fontsize=11, pad=10)
                         ax_faktor.set_ylabel("Rata-rata Skor", fontsize=10)
