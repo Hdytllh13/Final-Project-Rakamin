@@ -528,12 +528,12 @@ with tab2:
                         st.pyplot(fig_faktor, use_container_width=True)
 
                         # Insight singkat otomatis
-                        if faktor_mean.loc["job_satisfaction", "Churn"] < faktor_mean.loc["job_satisfaction", "No Churn"]:
-                            st.info("📉 Karyawan yang churn cenderung memiliki **kepuasan kerja lebih rendah**.")
-                        if faktor_mean.loc["manager_support_score", "Churn"] < faktor_mean.loc["manager_support_score", "No Churn"]:
-                            st.info("🤝 Dukungan manajer juga tampak lebih rendah pada kelompok churn.")
-                        if faktor_mean.loc["target_achievement", "Churn"] < faktor_mean.loc["target_achievement", "No Churn"]:
-                            st.info("🎯 Pencapaian target lebih rendah pada karyawan yang churn.")
+                        if faktor_mean.loc["Job Satisfaction", "Churn"] < faktor_mean.loc["Job Satisfaction", "No Churn"]:
+                            st.info("Karyawan yang churn memiliki rata-rata **kepuasan kerja lebih rendah** dibanding yang bertahan.")
+                        if faktor_mean.loc["Manager Support", "Churn"] < faktor_mean.loc["Manager Support", "No Churn"]:
+                            st.info("Karyawan yang churn memiliki rata-rata **dukungan manajer lebih rendah** dibanding yang bertahan.")
+                        if faktor_mean.loc["Target\nAchievement", "Churn"] < faktor_mean.loc["Target\nAchievement", "No Churn"]:
+                            st.info("Karyawan yang churn memiliki rata-rata **pencapaian target lebih rendah** dibanding yang bertahan.")                      
                     except Exception as e:
                         st.warning(f"⚠️ Tidak dapat menampilkan analisis faktor: {e}")       
             except Exception as e:
