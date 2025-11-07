@@ -1,0 +1,21 @@
+# === Core dependencies ===
+streamlit
+pandas
+numpy
+matplotlib
+joblib
+
+# === Machine Learning utilities ===
+scikit-learn
+imbalanced-learn
+
+# === Machine Learning ===
+xgboost
+catboost
+
+# === Model Explainability ===
+shap
+
+# === File handling (Excel/CSV export) ===
+openpyxl
+xlsxwriter
